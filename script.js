@@ -9,6 +9,7 @@ const equals = document.querySelector('#equals');
 const screen = document.querySelector('#screen');
 const buttons = document.querySelectorAll('button');
 
+
 let a, b;
 let operation;
 let result;
