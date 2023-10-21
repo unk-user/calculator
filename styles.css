@@ -1,6 +1,15 @@
+:root {
+    --background: rgb(27, 26, 26);
+    --main: #000000;
+    --textlight: #FFFFFF;
+    --operationcolumn: rgb(240, 163, 59);
+    --numbers: rgb(51, 51, 51);
+    --actionrow: rgb(165, 165, 165);
+}
+
 htmL {
     min-height: 100%;
-    background-color: rgb(27, 26, 26);
+    background-color: var(--background);
     font-family: San Frasisco;
 }
 body {
@@ -13,19 +22,19 @@ main {
     height: 700px;
     width: 340px;
     margin: auto;
-    background-color: black;
+    background-color: var(--main);
     border-radius: 15px;
     padding: 10px;
+    overflow: hidden;
 }
 #screen{
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     height: 30%;
-    background-color: black;
-    color: white;
+    background-color: var(--main);
+    color: var(--textlight);
     text-align: end;
-    font-size: 60px;
     padding: 15px;
 }
 #buttons {
@@ -36,26 +45,28 @@ main {
     
 }
 #numbers {
-    background-color: rgb(51, 51, 51);
-    color: white;
+    background-color: var(--numbers);
+    color: var(--textlight);
 }
-#operations {
-    background-color: rgb(240, 163, 59);
-    color: white;
+.operation {
+    background-color: var(--operationcolumn);
+    color: var(--textlight);
 }
 #dot {
-    background-color: rgb(51, 51, 51);
-    color: white;
+    background-color: var(--numbers);
+    color: var(--textlight);
 }
 #equals {
-    background-color: rgb(240, 163, 59);
-    color: white;
+    background-color: var(--operationcolumn);
+    color: var(--textlight);
 }
 #lastOperation {
     height: 30%;
+    font-size: 30px;
 }
 #currentOperation {
     height: 30%;
+    font-size: 60px;
 }
 .long {
     grid-column: 1 / 3;
@@ -69,10 +80,30 @@ button {
     margin: 3px;
     aspect-ratio: 1/1;
     border: 0;
-    background-color: rgb(165, 165, 165);
+    background-color: var(--actionrow);
     font-family: San Frasisco;
     font-size: 40px;
 }
+.action {
+    background-color: var(--actionrow);
+}
+footer {
+    color: #FFFFFF;
+    text-align: center;
+}
+a:visited {
+    text-decoration: none;
+    color: var(--operationcolumn);
+}
+a {
+    text-decoration: none;
+    color: var(--operationcolumn);
+}
+a:active {
+    text-decoration: none;
+    color: var(--operationcolumn);
+} 
+
 @font-face {
     font-family: San Frasisco;
     src: url(SFNSDisplay-Regular.otf);
