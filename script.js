@@ -6,6 +6,8 @@ const number = document.querySelectorAll('#numbers');
 const operations = document.querySelectorAll('#operations');
 const dot = document.querySelector('#dot');
 const equals = document.querySelector('#equals');
+const screen = document.querySelector('#screen');
+const buttons = document.querySelectorAll('button');
 
 let a, b;
 let operation;
@@ -103,7 +105,7 @@ const substitute = (a, b) => {
     return a - b;
 }
 const multiply = (a, b) => {
-    return a * b;
+    return Math.round((a * b) * 1000) / 1000;
 }
 const divide = (a, b) => {
     if(b !== 0){
@@ -113,5 +115,18 @@ const divide = (a, b) => {
     }    
 }
 const percentage = (a, b) => {
-    return (a / b) * 100;
+    return Math.round(((a / b) * 100) * 1000) / 1000;
 }
+
+buttons.forEach(button => {
+    button.addEventListener('click', () => {
+        let length = currentOperation.textContent.length;
+        let size = 60;
+        if(length < 7) {
+            currentOperation.style.fontSize = `60px`;
+        } else {
+            size -= length * 1.5;
+            currentOperation.style.fontSize = `${size}px`;
+        }
+    })
+})
